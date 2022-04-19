@@ -1,0 +1,34 @@
+{{#if logged}}
+<nav class="navbar text-white bg-warning">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white text-uppercase font-italic">{{user.username}}</a>
+    <form class="d-flex">
+      <button type="button" class="btn btn-success active w-100 me-2"><a href="home/account" style="color: #fff;" class="logout">Account</a></button>
+      <button class="btn btn-primary w-100"><a href="home/logout" style="color: #fff;" class="logout">Logout</a></button>
+    </form>
+  </div>
+</nav>
+<section>
+    <div class="container mt-5">
+        <div class="row">
+            {{#each products}}
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6  p-3">
+                <div class="card border-warning">
+                    <img class="card-img-top" src="{{this.image}}" alt="Card image cap"
+                        style="height: 12rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Name: {{this.name}}</h5>
+                        <p class="cart-text">Category: {{this.category}}</p>
+                        <p class="card-text" style="color: rgb(92, 134, 50);">PRICE: {{this.price}}</p>
+                        <a href="" class="btn btn-primary" onclick="cart()">Add to cart</a>
+                    </div>
+                </div>
+
+            </div>
+            {{/each}}
+
+
+        </div>
+    </div>
+</section>
+{{/if}}
